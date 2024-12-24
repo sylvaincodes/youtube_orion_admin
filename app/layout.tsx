@@ -1,4 +1,5 @@
 import "./globals.css";
+import { font } from "./fonts";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={` ${font.className}`}>{children}</body>
     </html>
   );
 }
