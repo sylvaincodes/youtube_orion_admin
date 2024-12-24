@@ -1,5 +1,6 @@
 import "./globals.css";
 import { font } from "./fonts";
+import Provider from "@/providers";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${font.className}`}>{children}</body>
+      <body className={` ${font.className}`}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }
