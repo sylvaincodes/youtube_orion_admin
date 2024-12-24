@@ -2,12 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
+html{
+    /* set default font size  */
+    font-size: 16px; 
+}
 body {
  color: black;
 }
 
 @layer base {
-  :root {
-  --radius: 0.5rem;
- }
+  h1{
+    @apply text-h1 dark:text-slate-100 first-letter:capitalize
+  }h2{
+    @apply text-h2 dark:text-slate-100 first-letter:capitalize
+  }h3{
+    @apply text-h3 dark:text-slate-100 first-letter:capitalize
+  }h4{
+    @apply text-h4 dark:text-slate-100 first-letter:capitalize
+  }h5{
+    @apply text-h5 dark:text-slate-100 first-letter:capitalize
+  }h6{
+    @apply  dark:text-slate-100 first-letter:capitalize
+  }
 }
