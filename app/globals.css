@@ -7,8 +7,9 @@ html{
     /* set default font size  */
     font-size: 16px; 
 }
+
 body {
- color: black;
+ @apply text-body dark:text-slate-100 dark:bg-black
 }
 
 @layer base {

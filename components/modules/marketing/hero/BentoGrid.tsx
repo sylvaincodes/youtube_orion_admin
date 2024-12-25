@@ -36,8 +36,8 @@ export default function BentoGrid() {
           </h1>
 
           <h6 className="text-pretty text-center max-w-screen-xl text-base font-normal lg:text-xl">
-            Simplify your online marketplace operations with Orion. Perfect for
-            seamless management and effortless scaling, Orion is the ultimate
+            Simplify your online marketplace operations with Bolcom. Perfect for
+            seamless management and effortless scaling, Bolcom is the ultimate
             multi vendor ecommerce build with NextJs.
           </h6>
 
@@ -82,7 +82,7 @@ export default function BentoGrid() {
 
           <div className="mt-10 flex flex-col justify-center items-center gap-4">
             <h6 className="text-center">
-              A lot of users are using ORION to grow their stores, join the
+              A lot of users are using Bolcom to grow their stores, join the
               community.
             </h6>
             <PeopleJoined data={people} />
