@@ -3,6 +3,7 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import React from "react";
 import { ThemeProvider } from "./theme-provider";
+import ToasterProvider from "./toast-provider";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   return (
@@ -26,6 +27,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         enableSystem
         disableTransitionOnChange
       >
+        <ToasterProvider />
         {children}
       </ThemeProvider>
     </ClerkProvider>
