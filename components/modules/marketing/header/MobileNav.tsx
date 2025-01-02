@@ -32,14 +32,14 @@ export default function MobileNav({ className }: { className?: string }) {
               <li>
                 <Link
                   className="text-h6 text-heading hover:text-primary-500 dark:text-white dark:hover:text-primary-500"
-                  href="/"
+                  href="/docs"
                 >
                   Docs
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/"
+                  href="/pricing"
                   className="text-h6 text-heading hover:text-primary-500 dark:text-white dark:hover:text-primary-500"
                 >
                   Pricing

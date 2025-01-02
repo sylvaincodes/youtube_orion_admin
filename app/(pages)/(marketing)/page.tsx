@@ -11,10 +11,10 @@ export default function page() {
 // Nextjs dynamic metadata
 export function generateMetadata() {
   return {
-    title: `Page - Title here`,
-    description: `Page - Description here`,
+    title: `Marketing page`,
+    description: `The marketing page`,
     icons: {
-      icon: `path to asset file`,
+      icon: `/assets/images/bolcom.svg`,
     },
   };
 }

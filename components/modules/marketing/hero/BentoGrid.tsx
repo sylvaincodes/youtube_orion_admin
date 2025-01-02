@@ -46,7 +46,7 @@ export default function BentoGrid() {
               variant="default"
               className="text-xl p-8 rounded-2xl hover:shadow-2xl font-normal z-10"
             >
-              <Link href={userId ? ".stores" : "sign-in"}>
+              <Link href={userId ? "/stores" : "sign-in"}>
                 {userId ? "dashboard" : "Join fo free"}
               </Link>
             </Button>

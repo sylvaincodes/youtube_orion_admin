@@ -10,12 +10,12 @@ export default function Nav({ className }: { className?: string }) {
     <Row className={cn("", className)}>
       <ul className="flex items-center h-full gap-12 text-heading text-base">
         <li>
-          <Link className="hover:text-slate-700" href="/">
+          <Link className="hover:text-slate-700" href="/docs">
             Docs
           </Link>
         </li>
         <li>
-          <Link className="hover:text-slate-700" href="/">
+          <Link className="hover:text-slate-700" href="/pricing">
             Pricing
           </Link>
         </li>
