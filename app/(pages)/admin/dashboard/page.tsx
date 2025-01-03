@@ -4,14 +4,12 @@ import Dashboard from "@/components/modules/admin/dashboard";
 import React from "react";
 
 // Nextjs ISR caching strategy
-export const revalidate = false;
+export const revalidate = 3600; //every 1 hour refetch data
 
 export default async function page() {
-
-//   server side rendering
-const sellers = await getSellers()
-const members = await getSubscriptions()
-const earnings = await getEarnings()
+  const sellers = await getSellers();
+  const members = await getSubscriptions();
+  const earnings = await getEarnings();
   return (
     <section className="py-10">
       <Container>
