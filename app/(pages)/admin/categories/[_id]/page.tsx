@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-expressions
-
 import Container from "@/components/custom/Container";
 import CategoryForm from "@/components/modules/admin/categories/CategoryForm";
 import { Metadata } from "next";
