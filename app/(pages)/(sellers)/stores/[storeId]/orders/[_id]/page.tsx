@@ -7,7 +7,7 @@ import React from "react";
 export default async function page({
   params,
 }: {
-  params: { storeId: string; _id: string };
+  params: {_id: string };
 }) {
   const order = await getOrderitems(params._id);
 

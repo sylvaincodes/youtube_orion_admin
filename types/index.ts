@@ -27,3 +27,7 @@ export type Order = {
     }[];
   };
   
+
+  export interface ParamsApp {
+    storeId: String;
+  }

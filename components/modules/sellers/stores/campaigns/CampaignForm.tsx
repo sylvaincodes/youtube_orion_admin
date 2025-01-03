@@ -239,8 +239,8 @@ export default function CampaignForm({
         });
     };
     if (_id) {
-        getData();
-      }
+      getData();
+    }
   }, [form.reset]);
 
   // 6. Define a submit handler.
