@@ -49,7 +49,9 @@ export default function Subscriptions({ _id }: { _id?: string }) {
           setLoading(false);
         });
     };
-    _id && getData();
+    if (_id) {
+        getData();
+      }
   }, []);
 
   return (

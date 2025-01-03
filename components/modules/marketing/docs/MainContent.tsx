@@ -233,7 +233,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                 <li>
                   <pre className="w-xs h-[400px] bg-slate-100 text-white rounded-md p-6 overflow-auto">
                     <code className="text-slate-800">
-                      <p className="text-gray-500">//The url of the project</p>
+                      <p className="text-gray-500">The url of the project</p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_SERVER_URL
                       </span>
@@ -245,7 +245,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       <br />
                       <br />
                       <p className="text-gray-500">
-                        //The url of the api project
+                        The url of the api project
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_API_URL
@@ -257,7 +257,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       ; <br />
                       <br />
                       <p className="text-gray-500">
-                        //The api public key for clerk
+                        The api public key for clerk
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
@@ -269,7 +269,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       ; <br />
                       <br />
                       <p className="text-gray-500">
-                        //The api secret key fro clerk
+                        The api secret key fro clerk
                       </p>
                       <span className="text-primary-600">CLERK_SECRET_KEY</span>
                       =
@@ -278,7 +278,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The api public key for stripe
+                        The api public key for stripe
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -289,7 +289,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The api secret key for stripe
+                        The api secret key for stripe
                       </p>
                       <span className="text-primary-600">
                         STRIPE_SECRET_KEY
@@ -312,7 +312,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                 <li>
                   <pre className="w-xs h-[400px] bg-slate-100 text-white rounded-md p-6 overflow-auto">
                     <code className="text-slate-800">
-                      <p className="text-gray-500">//The url of the project</p>
+                      <p className="text-gray-500">The url of the project</p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_SERVER_URL
                       </span>
@@ -324,7 +324,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       <br />
                       <br />
                       <p className="text-gray-500">
-                        //The url of the api project
+                        The url of the api project
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_API_URL
@@ -336,7 +336,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       ; <br />
                       <br />
                       <p className="text-gray-500">
-                        //The success url which is used by stripe callback
+                        The success url which is used by stripe callback
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_CLIENT_URL
@@ -348,7 +348,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       ; <br />
                       <br />
                       <p className="text-gray-500">
-                        //The api public key fro clerk
+                        The api public key fro clerk
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
@@ -360,7 +360,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       ; <br />
                       <br />
                       <p className="text-gray-500">
-                        //The api secret key fro clerk
+                        The api secret key fro clerk
                       </p>
                       <span className="text-primary-600">CLERK_SECRET_KEY</span>
                       =
@@ -369,7 +369,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The api public key for stripe
+                        The api public key for stripe
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -380,7 +380,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The api secret key for stripe
+                        The api secret key for stripe
                       </p>
                       <span className="text-primary-600">
                         STRIPE_SECRET_KEY
@@ -390,14 +390,14 @@ export default function MainContent({ showContent }: { showContent: string }) {
                         &apos;put stripe secret key&apos;
                       </strong>
                       ; <br /> <br />
-                      <p className="text-gray-500">//The mongo db url</p>
+                      <p className="text-gray-500">The mongo db url</p>
                       <span className="text-primary-600">MONGODB_URI</span>=
                       <strong className="text-green-800">
                         &apos;put mongo db database url&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The google email for newsletter
+                        The google email for newsletter
                       </p>
                       <span className="text-primary-600">
                         NEXT_PUBLIC_GOOGLE_MY_EMAIL
@@ -408,7 +408,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
-                        //The password for your email application.
+                        The password for your email application.
                       </p>
                       <span className="text-primary-600">
                         GOOGLE_PASSWORD_APP

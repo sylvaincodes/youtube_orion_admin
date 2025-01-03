@@ -156,7 +156,9 @@ export default function PageForm({ _id }: { _id?: string }) {
           setLoading(false);
         });
     };
-    _id && getData();
+    if (_id) {
+        getData();
+      }
   }, [form.reset]);
 
   // 6. Define a submit handler.

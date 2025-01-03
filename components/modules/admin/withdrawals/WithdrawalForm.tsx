@@ -143,7 +143,9 @@ export default function WithdrawalForm({
           setLoading(false);
         });
     };
-    _id && getData();
+    if (_id) {
+        getData();
+      }
   }, [form.reset]);
 
   // 6. Define a submit handler.
