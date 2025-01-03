@@ -79,6 +79,7 @@ export const slugString = (name: string) => {
   url = name
     .trim()
     .replaceAll(" ", "-")
+    // eslint-disable-next-line no-useless-escape
     .replaceAll(/[éçà`"è'^(-)&~!@#$%_|:\/?=;,<>{}]/gi, "")
     .toLowerCase();
 

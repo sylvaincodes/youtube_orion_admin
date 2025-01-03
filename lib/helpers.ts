@@ -3,6 +3,7 @@ export function slugString(name: string) {
   url = name
     .trim()
     .replaceAll(" ", "-")
+    // eslint-disable-next-line no-useless-escape
     .replaceAll(/[`~!@#$%^&*()_|+\=?;:'",.<>{}\[\]\\\/]/gi, "")
     .toLowerCase();
   return url;

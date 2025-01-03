@@ -715,7 +715,9 @@ export default function ProductForm({
     getColors();
     getSizes();
     getStore();
-    _id && getProduct();
+    if (_id) {
+      getProduct();
+    }
     getSubCategories();
     getBrands();
     getCollections();
