@@ -3,7 +3,7 @@ import WithdrawalForm from "@/components/modules/admin/withdrawals/WithdrawalFor
 import { Metadata } from "next";
 import React from "react";
 
-export default async function page({
+export default function page({
   params,
 }: {
   params: { _id: string; storeId: string };

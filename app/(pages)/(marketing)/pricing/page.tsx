@@ -4,7 +4,7 @@ import Pricing from "@/components/modules/marketing/pricing";
 import { Metadata } from "next";
 import React from "react";
 
-export default async function page() {
+export default function page() {
   return (
     <section>
       <Container>

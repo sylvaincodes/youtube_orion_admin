@@ -4,7 +4,7 @@ import React from "react";
 
 export const revalidate = 3600;
 
-export default async function page() {
+export default function page() {
 
   return <Hero />;
 }

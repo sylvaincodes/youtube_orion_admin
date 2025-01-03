@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { Metadata } from "next";
 import React from "react";
 
-export default async function page() {
+export default function page() {
   return (
     <>
       <section className="py-10">

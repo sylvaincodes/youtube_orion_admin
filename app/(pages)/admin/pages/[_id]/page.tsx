@@ -3,7 +3,7 @@ import PageForm from "@/components/modules/admin/pages/PageForm";
 import { Metadata } from "next";
 import React from "react";
 
-export default async function page({ params }: { params: { _id: string } }) {
+export default function page({ params }: { params: { _id: string } }) {
   return (
     <>
       <section className="py-10">

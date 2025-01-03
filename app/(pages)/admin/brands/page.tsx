@@ -9,7 +9,7 @@ import React from "react";
 
 export const dynamic = "force-dynamic";
 
-export default async function Page() {
+export default function Page() {
   return (
     <>
       <section className="py-10">

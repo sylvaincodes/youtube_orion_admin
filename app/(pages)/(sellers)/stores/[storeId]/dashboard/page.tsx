@@ -5,7 +5,7 @@ import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
-export default async function page({
+export default function page({
   params,
 }: {
   params: { storeId: string };
