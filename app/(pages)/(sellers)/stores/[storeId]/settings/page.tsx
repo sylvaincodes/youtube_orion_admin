@@ -4,7 +4,7 @@ import { checkRole } from "@/lib/roles";
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({
+export default async function page({
   params,
 }: {
   params: { storeId: string };
