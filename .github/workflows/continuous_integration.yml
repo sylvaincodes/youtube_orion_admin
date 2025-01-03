@@ -20,7 +20,7 @@ jobs:
                 cache: 'npm' # cache the node modules  
             
             - name: Install dependencies
-              run: npm ci
+              run: npm ci --legacy-peer-deps
 
             - name: Run typescript
               run: npm i -g typescript && tsc
