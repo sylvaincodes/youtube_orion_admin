@@ -83,7 +83,7 @@ export default function CollectionForm({ _id }: { _id?: string }) {
       });
   }
   async function putRequest(url: string, { arg }: { arg: CollectionFormData }) {
-    const token = getToken();
+    const token = await getToken();
     return await axios
       .put(process.env.NEXT_PUBLIC_API_URL + url, arg, {
         params: { _id: collection?._id },
@@ -196,7 +196,7 @@ export default function CollectionForm({ _id }: { _id?: string }) {
           <Heading
             name={
               collection
-                ? `page - ${collection.name.substring(0, 15)}`
+                ? `edit - ${collection.name.substring(0, 15)}`
                 : `Add new collection`
             }
             description="Fill the required (*) input(s) and click on save to continue."

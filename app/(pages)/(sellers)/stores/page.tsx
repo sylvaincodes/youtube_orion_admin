@@ -16,9 +16,9 @@ export default async function page() {
   return (
     <section>
       <Container>
-        <div className="flex  flex-col justify-center items-center gap-12 py-40 px-10 items-center">
+        <div className="flex  flex-col justify-center gap-12 py-40 px-10 items-center">
           <Image
-            src="/assets/images/bolcom.svg"
+            src="/assets/images/mobile_black.svg"
             width={200}
             height={200}
             alt="logo"
@@ -26,7 +26,7 @@ export default async function page() {
           <h6 className="text-xl text-center lg:text-3xl font-light tracking-wider">
             Welcome on
             <strong className="!text-primary-900 font-bold text-3xl mx-2">
-              Bolcom
+              Orion
             </strong>
             Multi Vendor online shop
           </h6>
@@ -34,7 +34,7 @@ export default async function page() {
             Create or select a store below
           </h6>
 
-          <StoreModal className="border border-border" />
+          <StoreModal className="border border-border w-[320px] lg:w-[620px]" />
         </div>
       </Container>
     </section>

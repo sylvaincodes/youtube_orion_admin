@@ -155,6 +155,7 @@ export default function SlideForm({ _id }: { _id?: string }) {
           const data = response.data;
           setData(data.data);
           form.reset(data.data);
+          console.log("___",data)
         })
         .catch((error) => {
           console.log(error);
@@ -198,7 +199,9 @@ export default function SlideForm({ _id }: { _id?: string }) {
         <div className="flex flex-wrap space-y-4 justify-between items-center">
           <Heading
             name={
-              _id ? `slide - ${slide?.name.substring(0, 15)}` : `Add new slide`
+              slide
+                ? `edit - ${slide.name.substring(0, 15)}`
+                : `Add new slide`
             }
             description="Fill the required (*) input(s) and click on save to continue."
           />

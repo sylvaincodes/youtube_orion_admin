@@ -135,15 +135,13 @@ export default function WithdrawalForm({
       setLoading(true);
       const token = await getToken();
       await axios
-        .get(
-          process.env.NEXT_PUBLIC_API_URL + "/api/user/withdrawals?_id=" + _id,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        )
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/withdrawals", {
+          params: { _id: _id },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setData(response.data.data);
           form.reset(response.data.data);
@@ -155,7 +153,7 @@ export default function WithdrawalForm({
           setLoading(false);
         });
     };
-    getData();
+    _id ? getData() : "";
   }, [form.reset]);
 
   // 6. Define a submit handler.
@@ -246,7 +244,8 @@ export default function WithdrawalForm({
                       isUpdating ||
                       isLoading ||
                       (withdrawal && withdrawal.status === "pending") ||
-                      withdrawal?.status === "pending"
+                      withdrawal?.status === "pending" ||
+                      withdrawal?.status === "paid"
                     }
                     type="submit"
                   >
@@ -288,7 +287,9 @@ export default function WithdrawalForm({
                               <SelectTrigger>
                                 <SelectValue
                                   defaultValue={field.value}
-                                  placeholder="Select a status"
+                                  placeholder={
+                                    withdrawal?.status ?? "Select a status"
+                                  }
                                 />
                               </SelectTrigger>
                             </FormControl>

@@ -1,7 +1,7 @@
 "use client";
 import { TypeSlideItemModel } from "@/types/models";
 import React, { useState } from "react";
-import usePagination from "@/hooks/use-pagination";
+import usePagination from "@/hooks/usePagination";
 import { Pagination } from "@mui/material";
 import Content from "./Content";
 import Loading from "@/components/custom/Loading";

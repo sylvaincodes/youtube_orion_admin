@@ -62,7 +62,10 @@ const MultipleUpload: React.FC<ImageUploadProps> = ({
           </div>
         ))}
       </div>
-      <CldUploadWidget onSuccess={onUpload} uploadPreset="jvdvfr2j">
+      <CldUploadWidget
+        onSuccess={onUpload}
+        uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_PRESET_NAME}
+      >
         {({ open }) => {
           const onClick = () => {
             open();

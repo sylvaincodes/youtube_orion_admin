@@ -75,14 +75,14 @@ export default function StoreModal({
   if (isLoading) return <Loading loading={true} />;
 
   return (
-    <div className="w-[320px] lg:w-[620px]">
+    <div className={className}>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
             variant="outline"
             role="combobox"
             aria-expanded={open}
-            className={cn("w-[320px] lg:w-[620px] justify-between", className)}
+            className={cn("justify-between", className)}
           >
             <DoorOpen />
             <h6 className="font-bold text-[14px] capitalize">

@@ -8,11 +8,13 @@ export default async function page({
 }: {
   params: { storeId: string };
 }) {
+
+  const { storeId } = await  params
   return (
     <>
       <section className="py-10">
         <Container>
-          <ProductForm storeId={params.storeId} />
+          <ProductForm storeId={storeId} />
         </Container>
       </section>
     </>

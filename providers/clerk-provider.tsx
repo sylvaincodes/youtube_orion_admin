@@ -17,7 +17,7 @@ export default function ClerkProvider({
       signUpFallbackRedirectUrl="/stores"
       appearance={{
         layout: {
-          logoImageUrl: "/assets/images/bolcom.svg",
+          logoImageUrl: "/assets/images/mobile_black.svg",
           socialButtonsPlacement: "bottom",
           socialButtonsVariant: "blockButton",
         },

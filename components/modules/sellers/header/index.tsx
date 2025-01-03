@@ -11,7 +11,7 @@ export default function Header({ storeId }: { storeId?: string }) {
     <header className="h-[80px] z-10 border-b border-border ">
       <Container>
         <Row className="gap-4 relative">
-          <StoreModal storeId={storeId} />
+          <StoreModal storeId={storeId} className="w-[260px] lg:w-[240px]" />
           <NavMenu storeId={storeId} />
           <IconsGroups className="ms-auto" />
         </Row>

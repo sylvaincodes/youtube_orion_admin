@@ -104,9 +104,9 @@ import {
 } from "@/components/ui/popover";
 import { status, inventory, units } from "@/constants";
 import { nameFormat } from "@/lib/regex";
-import "react-quill/dist/quill.snow.css";
+import "react-quill-new/dist/quill.snow.css";
 import dynamic from "next/dynamic";
-const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+const ReactQuill = dynamic(() => import("react-quill-new"), { ssr: false });
 
 export default function ProductForm({
   storeId,
@@ -221,7 +221,13 @@ export default function ProductForm({
           await axios
             .post(
               process.env.NEXT_PUBLIC_API_URL + "/api/user/productvariants",
-              dataArray
+              dataArray,
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+              }
             )
             .then(() => {
               toast({
@@ -280,6 +286,10 @@ export default function ProductForm({
                 params: {
                   productId: data.data._id,
                 },
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
               }
             )
             .then(async (res) => {
@@ -315,7 +325,13 @@ export default function ProductForm({
                     .post(
                       process.env.NEXT_PUBLIC_API_URL +
                         "/api/user/productvariants",
-                      dataArray
+                      dataArray,
+                      {
+                        headers: {
+                          "Content-Type": "application/json",
+                          Authorization: `Bearer ${token}`,
+                        },
+                      }
                     )
                     .then(() => {
                       toast({
@@ -363,11 +379,15 @@ export default function ProductForm({
                     .post(
                       process.env.NEXT_PUBLIC_API_URL +
                         "/api/user/productvariants",
-                      dataArray
+                      dataArray,
+                      {
+                        headers: {
+                          "Content-Type": "application/json",
+                          Authorization: `Bearer ${token}`,
+                        },
+                      }
                     )
                     .then((response) => {
-                      console.log("ok pv nice", response.data);
-
                       toast({
                         variant: "default",
                         title: "Well done ✔️",
@@ -500,8 +520,14 @@ export default function ProductForm({
 
     const getSubCategories = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/subcategories")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/subcategories", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setSubCategoriesList(response.data.data);
         })
@@ -515,8 +541,14 @@ export default function ProductForm({
 
     const getCollections = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/collections")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/collections", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setCollectionsList(response.data.data);
         })
@@ -530,8 +562,14 @@ export default function ProductForm({
 
     const getTags = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/tags")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/tags", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setTagsList(response.data.data);
         })
@@ -545,8 +583,14 @@ export default function ProductForm({
 
     const getData = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/categories")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/categories", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setCategories(response.data.data);
         })
@@ -560,12 +604,17 @@ export default function ProductForm({
 
     const getImages = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(
-          process.env.NEXT_PUBLIC_API_URL +
-            "/api/user/images?storeId=" +
-            storeId
-        )
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/images", {
+          params: {
+            storeId: storeId,
+          },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then(() => {})
         .catch((error) => {
           console.log(error);
@@ -577,8 +626,14 @@ export default function ProductForm({
 
     const getColors = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/colors")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/colors", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setColorsList(response.data.data);
         })
@@ -592,8 +647,14 @@ export default function ProductForm({
 
     const getSizes = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/sizes")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/sizes", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setSizesList(response.data.data);
         })
@@ -607,10 +668,17 @@ export default function ProductForm({
 
     const getStore = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(
-          process.env.NEXT_PUBLIC_API_URL + "/api/user/stores?_id=" + storeId
-        )
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/stores", {
+          params: {
+            _id: storeId,
+          },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setStore(response.data.data);
         })
@@ -624,8 +692,14 @@ export default function ProductForm({
 
     const getBrands = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/brands")
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/brands", {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setBrands(response.data.data);
         })
@@ -706,12 +780,13 @@ export default function ProductForm({
   // 8. Add option item
   const handleAddOptionItem = async (event: React.KeyboardEvent) => {
     setLoading(true);
+    const token = await getToken();
     if (event.key === "Enter") {
       //check option active and add value
       if (activeOption === "" || optionItem == "") {
         toast({
           variant: "destructive",
-          title: "Erreor",
+          title: "Error",
           description: "Select an option first and fill choice",
         });
         return;
@@ -756,7 +831,12 @@ export default function ProductForm({
 
         //api save color
         await axios
-          .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/colors", data)
+          .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/colors", data, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then((response) => {
             setColors([...colors, response.data.data]);
           })
@@ -796,7 +876,12 @@ export default function ProductForm({
         }
 
         await axios
-          .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/sizes", data)
+          .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/sizes", data, {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          })
           .then((response) => {
             setSizes([...sizes, response.data.data]);
           })
@@ -905,6 +990,7 @@ export default function ProductForm({
 
   const handleSaveImage = async (url: string) => {
     setLoading(true);
+    const token = await getToken();
     // setImages([...images, { url }]);
     images.push({ url });
     form.setValue("images", images);
@@ -915,7 +1001,12 @@ export default function ProductForm({
       user_id: userId,
     };
     await axios
-      .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/images", data)
+      .post(process.env.NEXT_PUBLIC_API_URL + "/api/user/images", data, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then(() => {})
       .catch((err) => {
         console.log(err.message);

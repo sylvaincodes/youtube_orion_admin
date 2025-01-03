@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/components/custom/ThemeToggle";
+import ThemeToggle from "@/components/custom/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
 import React from "react";

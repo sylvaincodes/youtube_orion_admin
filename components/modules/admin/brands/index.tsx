@@ -9,7 +9,7 @@ import { useAuth } from "@clerk/nextjs";
 
 export default function Brands() {
   const { getToken } = useAuth();
-  // fecthing client
+  // fetching client
   const fetcher: Fetcher<Brand[], string> = async (url) => {
     const token = await getToken();
     return await axios

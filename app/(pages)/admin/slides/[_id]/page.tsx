@@ -4,11 +4,12 @@ import React from "react";
 import { Metadata } from "next";
 
 export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <SlideForm _id={params._id} />
+          <SlideForm _id={_id} />
         </Container>
       </section>
     </>

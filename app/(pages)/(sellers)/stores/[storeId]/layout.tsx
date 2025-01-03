@@ -10,13 +10,16 @@ export default async function Layout({
   children: React.ReactNode;
   params: { storeId: string };
 }) {
+    
   if ((await checkRole("admin")) === true) {
     redirect("/admin/dashboard");
   }
 
+  const { storeId } = await params
+
   return (
     <>
-      <Header storeId={params.storeId} />
+      <Header storeId={storeId} />
       {children}
     </>
   );

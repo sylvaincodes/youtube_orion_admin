@@ -5,11 +5,10 @@ import Heading from "@/components/custom/Heading";
 import { Separator } from "@/components/ui/separator";
 import { ToastAction } from "@/components/ui/toast";
 import { toast } from "@/hooks/use-toast";
-import { SubCategoryFormData } from "@/types/forms";
 import { SubcategoryValidationSchema } from "@/types/schemas";
 import { useAuth } from "@clerk/nextjs";
 import axios from "axios";
-import { ChevronLeft, Router } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -41,13 +40,14 @@ import Loading from "@/components/custom/Loading";
 import { status } from "@/constants";
 import { slugString } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { SubcategoryFormData } from "@/types/forms";
 
 export default function SubCategoryForm({ _id }: { _id?: string }) {
   const [isLoading, setIsLoading] = useState(false);
   const { getToken } = useAuth();
   const router = useRouter();
   //states
-  const [subcategory, setData] = useState<SubCategoryFormData>();
+  const [subcategory, setData] = useState<SubcategoryFormData>();
   const { userId } = useAuth();
   // define form
   const form = useForm<z.infer<typeof SubcategoryValidationSchema>>({
@@ -89,7 +89,7 @@ export default function SubCategoryForm({ _id }: { _id?: string }) {
   // Form method request
   async function postRequest(
     url: string,
-    { arg }: { arg: SubCategoryFormData }
+    { arg }: { arg: SubcategoryFormData }
   ) {
     const token = await getToken();
     return await axios
@@ -120,7 +120,7 @@ export default function SubCategoryForm({ _id }: { _id?: string }) {
   }
   async function putRequest(
     url: string,
-    { arg }: { arg: SubCategoryFormData }
+    { arg }: { arg: SubcategoryFormData }
   ) {
     const token = await getToken();
     return await axios
@@ -220,8 +220,12 @@ export default function SubCategoryForm({ _id }: { _id?: string }) {
       <div className="flex flex-col gap-4">
         <div className="flex flex-wrap space-y-4 justify-between items-center">
           <Heading
-            name="Add new categories"
-            description="Fill the required (*) input and click on save to continue"
+            name={
+              _id
+                ? `Edit - ${subcategory && subcategory.name.substring(0, 15)}`
+                : `Add new Sub category`
+            }
+            description="Fill the required (*) input(s) and click on save to continue."
           />
           <Link
             href="/admin/subcategories"

@@ -28,10 +28,17 @@ export function StoreCreateForm({
 }: {
   setOpenAddStore: (v: boolean) => void;
 }) {
+  const { getToken } = useAuth();
   const router = useRouter();
   async function sendRequest(url: string, { arg }: { arg: StoreFormData }) {
+    const token = await getToken();
     return await axios
-      .post(process.env.NEXT_PUBLIC_API_URL + url, arg)
+      .post(process.env.NEXT_PUBLIC_API_URL + url, arg, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((response) => {
         const data = response.data;
 

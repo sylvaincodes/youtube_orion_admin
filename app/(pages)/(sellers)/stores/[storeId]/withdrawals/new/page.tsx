@@ -9,13 +9,13 @@ export default async function page({
 }: {
   params: { storeId: string };
 }) {
-  const earnings = await getEarnings(params.storeId);
-
+  const { storeId } = await params;
+  const earnings = await getEarnings(storeId);
   return (
     <>
       <section className="py-10">
         <Container>
-          <WithdrawalForm store={params.storeId} earnings={earnings}  />
+          <WithdrawalForm store={storeId} earnings={earnings} />
         </Container>
       </section>
     </>

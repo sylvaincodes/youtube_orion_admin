@@ -7,11 +7,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import React from "react";
 
-export default async function page({
-  params,
-}: {
-  params: { storeId: string };
-}) {
+export default function page({ params }: { params: { storeId: string } }) {
   return (
     <>
       <section className="py-10">

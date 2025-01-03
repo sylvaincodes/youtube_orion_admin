@@ -25,14 +25,14 @@ export default function Withdrawals() {
   };
 
   const { data, isLoading } = useSWR<Withdrawl[]>(
-    process.env.NEXT_PUBLIC_API_URL + "/api/user/withdrawals",
+    process.env.NEXT_PUBLIC_API_URL + "/api/admin/withdrawals",
     fetcher
   );
   if (isLoading) return <Loading loading={true} />;
 
   return (
     <>
-      <DataTable searchKey="name" columns={columns} data={data ? data : []} />;
+      <DataTable searchKey="status" columns={columns} data={data ? data : []} />;
     </>
   );
 }

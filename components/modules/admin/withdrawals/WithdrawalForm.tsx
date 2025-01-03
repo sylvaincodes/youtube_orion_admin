@@ -171,7 +171,7 @@ export default function WithdrawalForm({
       <div className="flex flex-col gap-4">
         <div className="flex flex-wrap space-y-4 justify-between items-center">
           <Heading
-            name={`Add new withdrawal`}
+            name={`Edit withdrawal`}
             description="Fill the required (*) input(s) and click on save to continue."
           />
           <Link
@@ -203,7 +203,7 @@ export default function WithdrawalForm({
                       <FormItem>
                         <FormLabel>Withdrawal</FormLabel>
                         <FormControl>
-                          <Input placeholder="0" {...field} />
+                          <Input readOnly placeholder="0" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -216,7 +216,7 @@ export default function WithdrawalForm({
                       <FormItem>
                         <FormLabel>Paypal account</FormLabel>
                         <FormControl>
-                          <Input placeholder="" {...field} />
+                          <Input readOnly placeholder="" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>

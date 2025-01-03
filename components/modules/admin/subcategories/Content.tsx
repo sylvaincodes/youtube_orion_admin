@@ -14,6 +14,7 @@ export default function Content({ data }: { data: TypeSubCategoryModel[] }) {
           {data &&
             data.map((item: TypeSubCategoryModel, idx: number) => (
               <Link
+                key={idx}
                 href={`/admin/subcategories/${item._id}`}
                 className="flex flex-col justify-center items-center gap-4 h-[200px] w-[200px]"
               >

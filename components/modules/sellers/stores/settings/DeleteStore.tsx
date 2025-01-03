@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shuffle, Trash } from "lucide-react";
-import { Alert } from "@/components/custom/Alert";
+import  Alert  from "@/components/custom/Alert";
 import { TypeStoreModel } from "@/types/models";
 
 import useSWRMutation from "swr/mutation";

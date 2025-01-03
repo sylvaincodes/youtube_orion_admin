@@ -6,7 +6,7 @@ import { People } from "@/types";
 
 export default function PeopleJoined({ data }: { data: People[] }) {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row justify-center">
       <AnimatedTooltip items={data} />
     </div>
   );

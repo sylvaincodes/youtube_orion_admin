@@ -9,10 +9,12 @@ import "react-medium-image-zoom/dist/styles.css";
 import { CldUploadWidget } from "next-cloudinary";
 
 export default function ImageUpload({
+  disabled,
   onChange,
   onRemove,
   value,
 }: {
+  disabled?: boolean;
   onChange: (value: string) => void;
   onRemove: (value: string) => void;
   value: string;
@@ -63,7 +65,12 @@ export default function ImageUpload({
             open();
           };
           return (
-            <Button type="button" variant="secondary" onClick={onClick}>
+            <Button
+              disabled={disabled}
+              type="button"
+              variant="secondary"
+              onClick={onClick}
+            >
               <ImagePlus className="h-4 w-4 mr-2" />
               Upload an image
             </Button>

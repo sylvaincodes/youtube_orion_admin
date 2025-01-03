@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getOrderitems = async (_id: string) => {
   try {
-    const { getToken } = auth();
+    const { getToken } = await auth();
     const token = await getToken();
 
     const response = await axios.get(
@@ -24,7 +24,7 @@ export const getOrderitems = async (_id: string) => {
 
 export const getEarnings = async (store: string) => {
   try {
-    const { getToken } = auth();
+    const { getToken } = await auth();
     const token = await getToken();
 
     const response = await axios.get(

@@ -14,7 +14,7 @@ export function generateMetadata() {
     title: `Marketing page`,
     description: `The marketing page`,
     icons: {
-      icon: `/assets/images/bolcom.svg`,
+      icon: `/assets/images/mobile_black.svg`,
     },
   };
 }

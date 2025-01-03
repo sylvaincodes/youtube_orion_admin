@@ -80,7 +80,7 @@ export default function TagForm({ _id }: { _id?: string }) {
       });
   }
   async function putRequest(url: string, { arg }: { arg: BrandFormData }) {
-    const token = getToken();
+    const token = await getToken();
     return await axios
       .put(process.env.NEXT_PUBLIC_API_URL + url, arg, {
         params: { _id: tag?._id },
@@ -187,7 +187,7 @@ export default function TagForm({ _id }: { _id?: string }) {
       <div className="flex flex-col gap-4">
         <div className="flex flex-wrap space-y-4 justify-between items-center">
           <Heading
-            name={tag ? `page - ${tag.name.substring(0, 15)}` : `Add new tag`}
+            name={tag ? `edit - ${tag.name.substring(0, 15)}` : `Add new tag`}
             description="Fill the required (*) input(s) and click on save to continue."
           />
           <Link

@@ -3,7 +3,7 @@ import ProductForm from "@/components/modules/sellers/stores/products/ProductFor
 import { Metadata } from "next";
 import React from "react";
 
-export default async function page({
+export default function page({
   params,
 }: {
   params: { storeId: string; _id: string };

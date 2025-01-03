@@ -97,7 +97,7 @@ The project contains all Next.js App Router pages and layouts, and takes care of
 
 - Learning how to create reusable components with React and NextJs
 
-- Learning how to integrate Restful APIs
+- Learning how to integrate Restful APIs with axios and useSWR
 
 - Integrating client side validation with Zod Validator
 
