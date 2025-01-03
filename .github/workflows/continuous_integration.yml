@@ -25,6 +25,9 @@ jobs:
             - name: Run typescript
               run: npm i -g typescript && tsc
 
+            - name: Run jest tests
+              run: npm run test
+
             - name: Run eslint
               run: npm run lint && eslint
 

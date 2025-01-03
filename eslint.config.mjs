@@ -27,6 +27,9 @@ export default [
       "components/ui/*",
       "components/custom/*",
       "components/modules/result/PaymentCompleted.tsx",
+      "jest.config.ts",
+      "coverage",
+      "__tests__/*",
     ],
   },
 ];
