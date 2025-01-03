@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-expressions
+
 import Container from "@/components/custom/Container";
 import CategoryForm from "@/components/modules/admin/categories/CategoryForm";
 import { Metadata } from "next";
@@ -20,7 +22,7 @@ export const dynamicParams = true;
 
 // Return a list of `params` to populate the [slug] dynamic segment
 export async function generateStaticParams() {
-  return []
+  return [];
 }
 
 export const metadata: Metadata = {
