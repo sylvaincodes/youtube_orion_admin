@@ -1,6 +1,6 @@
 "use client";
 import Container from "@/components/custom/Container";
-import { PeopleJoined } from "@/components/custom/PeopleJoined";
+import  PeopleJoined  from "@/components/custom/PeopleJoined";
 import PricingCard from "@/components/custom/PricingCard";
 import Row from "@/components/custom/Row";
 import { Badge } from "@/components/ui/badge";

@@ -1,5 +1,4 @@
 "use client";
-import { ClerkProvider } from "@clerk/nextjs";
 import * as React from "react";
 import { ThemeProvider } from "./theme-provider";
 import ToasterProvider from "./toast-provider";

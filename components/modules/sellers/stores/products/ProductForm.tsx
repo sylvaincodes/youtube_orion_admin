@@ -387,7 +387,7 @@ export default function ProductForm({
                         },
                       }
                     )
-                    .then((response) => {
+                    .then(() => {
                       toast({
                         variant: "default",
                         title: "Well done ✔️",

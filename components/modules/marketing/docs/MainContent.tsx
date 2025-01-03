@@ -239,7 +239,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'http://localhost:3000'
+                        &apos;http://localhost:3000&apos;
                       </strong>
                       ;
                       <br />
@@ -252,7 +252,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'http://localhost:3001'
+                        &apos;http://localhost:3001&apos;
                       </strong>
                       ; <br />
                       <br />
@@ -264,7 +264,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put clerk public key'
+                        &apos;put clerk public key&apos;
                       </strong>
                       ; <br />
                       <br />
@@ -274,7 +274,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       <span className="text-primary-600">CLERK_SECRET_KEY</span>
                       =
                       <strong className="text-green-800">
-                        'put clerk secret key'
+                        &apos;put clerk secret key&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -285,7 +285,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put stripe public key'
+                        &apos;put stripe public key&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -296,7 +296,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put stripe secret key'
+                        &apos;put stripe secret key&apos;
                       </strong>
                       ; <br /> <br />
                     </code>
@@ -318,7 +318,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'http://localhost:3001'
+                        &apos;http://localhost:3001&apos;
                       </strong>
                       ;
                       <br />
@@ -331,7 +331,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'http://localhost:3001'
+                        &apos;http://localhost:3001&apos;
                       </strong>
                       ; <br />
                       <br />
@@ -343,7 +343,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'http://localhost:3000'
+                        &apos;http://localhost:3000&apos;
                       </strong>
                       ; <br />
                       <br />
@@ -355,7 +355,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put clerk public key'
+                        &apos;put clerk public key&apos;
                       </strong>
                       ; <br />
                       <br />
@@ -365,7 +365,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       <span className="text-primary-600">CLERK_SECRET_KEY</span>
                       =
                       <strong className="text-green-800">
-                        'put clerk secret key'
+                        &apos;put clerk secret key&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -376,7 +376,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put stripe public key'
+                        &apos;put stripe public key&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -387,13 +387,13 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put stripe secret key'
+                        &apos;put stripe secret key&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">//The mongo db url</p>
                       <span className="text-primary-600">MONGODB_URI</span>=
                       <strong className="text-green-800">
-                        'put mongo db database url'
+                        &apos;put mongo db database url&apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -404,7 +404,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put google email '
+                      &apos;put google email &apos;
                       </strong>
                       ; <br /> <br />
                       <p className="text-gray-500">
@@ -415,7 +415,7 @@ export default function MainContent({ showContent }: { showContent: string }) {
                       </span>
                       =
                       <strong className="text-green-800">
-                        'put google account password for application'
+                        &apos;put google account password for application&apos;
                       </strong>
                       ; <br />
                     </code>

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getWithdrawal = async (_id: string) => {
   try {
-    const { getToken } = auth();
+    const { getToken } = await auth();
     const token = await getToken();
 
     const response = await axios.get(

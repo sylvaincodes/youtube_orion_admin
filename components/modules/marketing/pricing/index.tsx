@@ -17,7 +17,7 @@ import { checkoutValidationSchema } from "@/types/schemas";
 import { z } from "zod";
 import getStripe from "@/lib/get-stripejs";
 import { useRouter } from "next/navigation";
-import { TypeSubscriptionPlan } from "@/types";
+import {TypeSubscriptionPlan} from "@/types";
 import Loading from "@/components/custom/Loading";
 
 export default function Pricing() {

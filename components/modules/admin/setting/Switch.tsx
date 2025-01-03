@@ -1,6 +1,6 @@
 "use client";
 
-import Alert from "@/components/custom/Alert";
+import { Alert } from "@/components/custom/Alert";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { SwitchRequestArg } from "@/types/mutations";
+import { SwitchRequestArgs } from "@/types/mutations";
 import { useAuth } from "@clerk/nextjs";
 import axios from "axios";
 import { Shuffle } from "lucide-react";
@@ -24,7 +24,7 @@ export default function Swicth({ check }: { check: boolean }) {
 
   const switchRequest = async (
     url: string,
-    { arg }: { arg: SwitchRequestArg }
+    { arg }: { arg: SwitchRequestArgs }
   ) => {
     const token = await getToken();
     return await axios
@@ -90,7 +90,7 @@ export default function Swicth({ check }: { check: boolean }) {
         openAlert={openAlert}
         onConfirm={onSwitchToAdmin}
         setOpenAlert={setOpenAlert}
-        isLoading={isSwitching}
+        isDeleting={isSwitching}
       />
     </div>
   );

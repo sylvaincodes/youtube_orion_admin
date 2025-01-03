@@ -1,3 +1,9 @@
+# [Code analysis](https://codecov.io) 
+[![codecov](https://codecov.io/github/sylvaincodes/youtube_orion_admin/graph/badge.svg?token=MNRQZCUIUZ)](https://codecov.io/github/sylvaincodes/youtube_orion_store_admin)
+[![CI Status](https://github.com/sylvaincodes/youtube_orion_store_admin/actions/workflows/continuous_integration.yml/badge.svg?branchName=master)](https://github.com/sylvaincodes/youtube_orion_admin/actions/workflows/continuous_integration.yml)
+[![CD Status](https://github.com/sylvaincodes/youtube_orion_store_admin/actions/workflows/continuous_deployment.yml/badge.svg?branchName=master)](https://github.com/sylvaincodes/youtube_orion_admin/actions/workflows/continuous_integration.yml)
+
+<br/>
 
 <div align="center">
   <img src="./public/assets/images/og2.png" alt="Orion">
@@ -156,6 +162,10 @@ VSCode or another text editor of your choice.
 <br/>
 
 
+## ✖️ Additional content ( SOURCE CODE )
+
+- Full Source code Part 1 and Part 2 : [Here](https://www.patreon.com/sylvaincodes/shop/download-orion-sass-multi-vendor-source-635862?source=storefront)
+<br/>
 
 <div id="badges">
   <a href="https://www.patreon.com/sylvaincodes" target="_blank">

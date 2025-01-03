@@ -28,7 +28,7 @@ export default function Subcategories() {
       .finally(() => {});
   };
 
-  const { data, isLoading } = useSWR<TypeSubCategoryModel[]>(
+  const { data } = useSWR<TypeSubCategoryModel[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/admin/subcategories",
     fetcher
   );

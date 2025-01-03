@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -11,36 +8,50 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../ui/alert-dialog";
+} from "@/components/ui/alert-dialog";
+import React from "react";
 
-export default function Alert({
+export function Alert({
   openAlert,
   setOpenAlert,
   onConfirm,
-  isLoading
+  isDeleting,
 }: {
   openAlert: boolean;
+  isDeleting: boolean;
   setOpenAlert: (v: boolean) => void;
   onConfirm: () => void;
-  isLoading: boolean
 }) {
   return (
     <AlertDialog open={openAlert}>
       <AlertDialogTrigger></AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-h5">Are you absolutely sure ?</AlertDialogTitle>
+          <AlertDialogTitle className="text-h5">
+            Are you absolutely sure?
+          </AlertDialogTitle>
           <AlertDialogDescription>
-            This action can not be undone!
+            This action cannot be undone. This will permanently update your
+            data.
           </AlertDialogDescription>
         </AlertDialogHeader>
-
-        <AlertDialogFooter className="">
-          <AlertDialogCancel onClick={() => setOpenAlert(false)}>
-            No, cancel
+        <AlertDialogFooter>
+          <AlertDialogCancel
+            onClick={() => {
+              {
+                setOpenAlert(false);
+              }
+            }}
+          >
+            No, Cancel
           </AlertDialogCancel>
-          <AlertDialogAction disabled={isLoading} onClick={() => onConfirm()}>
-            Yes, Go ahead
+          <AlertDialogAction
+            disabled={isDeleting}
+            onClick={() => {
+              onConfirm();
+            }}
+          >
+            Yes, Continue
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -1,5 +1,5 @@
 "use client";
-
+import * as React from "react";
 import Heading from "@/components/custom/Heading";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
