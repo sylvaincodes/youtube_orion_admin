@@ -33,6 +33,7 @@ jobs:
               run: echo "Deploying release to production"
 
   Deploy-Production:
+    needs: Approve
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
