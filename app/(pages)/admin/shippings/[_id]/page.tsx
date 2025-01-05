@@ -3,12 +3,13 @@ import ShippingForm from "@/components/modules/admin/shippings/ShippingForm";
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <ShippingForm _id={params._id} />
+          <ShippingForm _id={_id} />
         </Container>
       </section>
     </>

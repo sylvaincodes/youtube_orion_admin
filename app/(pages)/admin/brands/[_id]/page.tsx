@@ -3,12 +3,13 @@ import BrandForm from "@/components/modules/admin/brands/BrandForm";
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <BrandForm _id={params._id} />
+          <BrandForm _id={_id} />
         </Container>
       </section>
     </>

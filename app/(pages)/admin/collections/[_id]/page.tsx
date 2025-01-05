@@ -3,12 +3,13 @@ import CollectionForm from "@/components/modules/admin/collections/CollectionFor
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <CollectionForm _id={params._id} />
+          <CollectionForm _id={_id} />
         </Container>
       </section>
     </>

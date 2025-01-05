@@ -3,12 +3,13 @@ import Subscriptions from "@/components/modules/admin/subscriptions/Subscription
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <Subscriptions _id={params._id} />
+          <Subscriptions _id={_id} />
         </Container>
       </section>
     </>

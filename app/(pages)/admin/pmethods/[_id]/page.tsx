@@ -3,12 +3,13 @@ import PmethodForm from "@/components/modules/admin/pmethods/PmethodForm";
 import { Metadata } from "next";
 import React from "react";
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <>
       <section className="py-10">
         <Container>
-          <PmethodForm _id={params._id} />
+          <PmethodForm _id={_id} />
         </Container>
       </section>
     </>

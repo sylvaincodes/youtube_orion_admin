@@ -5,11 +5,12 @@ import React from "react";
 // Nextjs ISR caching strategy
 export const revalidate = false;
 
-export default function page({ params }: { params: { _id: string } }) {
+export default async function page({ params }: { params: { _id: string } }) {
+  const { _id } = await params;
   return (
     <section className="py-10">
       <Container>
-        <SubCategoryForm _id={params._id} />
+        <SubCategoryForm _id={_id} />
       </Container>
     </section>
   );
