@@ -13,7 +13,7 @@ export default function Header({ storeId }: { storeId?: string }) {
         <Row className="gap-4 relative">
           <StoreModal storeId={storeId} className="w-[260px] lg:w-[240px]" />
           <NavMenu storeId={storeId} />
-          <IconsGroups className="ms-auto" />
+          <IconsGroups className="hidden lg:flex ms-auto" />
         </Row>
       </Container>
     </header>

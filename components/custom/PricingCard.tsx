@@ -21,16 +21,23 @@ export default function PricingCard({ data }: { data: any }) {
   const router = useRouter();
   const [isLoading, setLoading] = useState(false);
   const [subscription, setSubscription] = useState<TypeSubscriptionModel>();
+  const { userId, getToken } = useAuth();
+
 
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
-        .get(
-          process.env.NEXT_PUBLIC_API_URL +
-            "/api/user/subscriptions?user_id=" +
-            userId
-        )
+        .get(process.env.NEXT_PUBLIC_API_URL + "/api/user/subscriptions", {
+          params: {
+            user_id: userId,
+          },
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           setSubscription(response.data.data);
         })
@@ -41,12 +48,18 @@ export default function PricingCard({ data }: { data: any }) {
           setLoading(false);
         });
     };
-    getData();
+    if (userId) getData();
   }, []);
 
   async function postRequest(url: string, { arg }: { arg: CheckoutFormData }) {
+    const token = await getToken();
     return await axios
-      .post(process.env.NEXT_PUBLIC_API_URL + url, arg)
+      .post(process.env.NEXT_PUBLIC_API_URL + url, arg, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then(async (response) => {
         const data = response.data;
         toast({
@@ -70,7 +83,6 @@ export default function PricingCard({ data }: { data: any }) {
   }
 
   // 1. Get user and set api
-  const { userId } = useAuth();
   const { trigger: create, isMutating: isCreating } = useSWRMutation(
     "/api/user/subscriptions",
     postRequest /* options */

@@ -17,22 +17,31 @@ import { checkoutValidationSchema } from "@/types/schemas";
 import { z } from "zod";
 import getStripe from "@/lib/get-stripejs";
 import { useRouter } from "next/navigation";
-import {TypeSubscriptionPlan} from "@/types";
+import { TypeSubscriptionPlan } from "@/types";
 import Loading from "@/components/custom/Loading";
 
 export default function Pricing() {
+  const { userId } = useAuth();
   const router = useRouter();
   const [isLoading, setLoading] = useState(false);
   const [subscription, setSubscription] = useState<TypeSubscriptionModel>();
+  const { getToken } = useAuth();
 
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
+      const token = await getToken();
       await axios
         .get(
           process.env.NEXT_PUBLIC_API_URL +
             "/api/user/subscriptions?user_id=" +
-            userId
+            userId,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
         )
         .then((response) => {
           setSubscription(response.data.data);
@@ -48,8 +57,14 @@ export default function Pricing() {
   }, []);
 
   async function postRequest(url: string, { arg }: { arg: CheckoutFormData }) {
+    const token = await getToken();
     return await axios
-      .post(process.env.NEXT_PUBLIC_API_URL + url, arg)
+      .post(process.env.NEXT_PUBLIC_API_URL + url, arg, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then(async (response) => {
         const data = response.data;
         toast({
@@ -73,7 +88,6 @@ export default function Pricing() {
   }
 
   // 1. Get user and set api
-  const { userId } = useAuth();
   const { trigger: create, isMutating: isCreating } = useSWRMutation(
     "/api/user/subscriptions",
     postRequest /* options */
@@ -120,7 +134,7 @@ export default function Pricing() {
           Simple pricing, no hidden fees.
         </h6>
 
-        <Row className="gap-4">
+        <Row className="flex-wrap lg:flex-nowrap lg:gap-x-4">
           {subscriptionPlan.map((item: TypeSubscriptionPlan, idx: number) => (
             <div className="flex flex-wrap gap-4 mt-20" key={idx}>
               <div className="flex flex-col gap-8 border border-border p-8 rounded-lg min-w-[360px]">

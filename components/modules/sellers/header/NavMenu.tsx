@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import MobileNav from "@/components/custom/MobileNav";
-import StoreModal from "./StoreModal";
+import IconsGroups from "./IconsGroups";
 
 export default function NavMenu({ storeId }: { storeId: string | undefined }) {
   const routes = [
@@ -66,8 +66,12 @@ export default function NavMenu({ storeId }: { storeId: string | undefined }) {
 
   return (
     <>
-      <MobileNav className="lg:hidden">
+      <MobileNav className="lg:hidden ms-auto">
         <ul className="flex flex-col gap-8 items-center justify-center text-heading capitalize">
+          <li  className="my-4">
+            <IconsGroups />
+          </li>
+
           {routes &&
             routes.map(
               (
@@ -103,7 +107,6 @@ export default function NavMenu({ storeId }: { storeId: string | undefined }) {
             </Button>
           </li>
         </ul>
-        <StoreModal storeId={storeId} />
       </MobileNav>
       <nav>
         <ul className="hidden lg:flex  gap-8 items-center justify-center text-heading capitalize">
